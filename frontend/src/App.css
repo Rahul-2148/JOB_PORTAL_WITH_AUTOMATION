@@ -113,14 +113,17 @@ input::-webkit-outer-spin-button {
 .navbar .links ul li {
   list-style-type: none;
 }
+.navbar .links ul li:hover {
+  transform: translateY(-5px);
+}
 .navbar .links ul li a {
   text-decoration: none;
   color: #444;
   transition: 0.3s;
 }
 .navbar .links ul li a:hover {
-  color: #dfdf07;
-  transition: 0.3s;
+  color: blue;
+  transition: color 0.3s ease-in-out;
 }
 .navbar .links ul:last-child {
   gap: 10px;
@@ -295,7 +298,7 @@ footer div ul a {
   transition: 0.3s;
 }
 footer div ul a:hover {
-  color: #dfdf07;
+  color: blue;
   transition: 0.3s;
 }
 footer div ul a span {
@@ -539,6 +542,7 @@ footer div ul a span {
 }
 .authPage .login-container {
   max-width: 620px;
+  margin: auto;
 }
 .authPage .container .header {
   display: flex;
@@ -594,7 +598,7 @@ footer div ul a span {
 .authPage .container form .inputTag div svg {
   width: 10%;
   font-size: 1.5rem;
-  background: #dfdf07;
+  background: rgba(0, 0, 255, 0.66);
   height: 46px;
   padding: 8px;
   color: #fff;
@@ -606,20 +610,27 @@ footer div ul a span {
   margin-top: 25px;
   font-weight: 700;
   color: #fff;
-  background: #dfdf07;
+  background: rgb(35, 35, 177);
   font-size: 1.2rem;
   border-radius: 7px;
+}
+ .authPage .container form button:hover {
+  background: blue;
 }
 .authPage .container form a {
   padding: 12px;
   text-align: center;
-  border: 1px solid #dfdf07;
+  border: 1px solid black;
   margin-top: 25px;
   font-weight: 700;
-  color: #dfdf07;
+  color: blue;
   font-size: 1.2rem;
   text-decoration: none;
   border-radius: 7px;
+}
+.authPage .container form a:hover {
+  background: blue;
+  color: #fff;
 }
 .authPage .banner {
   flex: 2;
@@ -665,7 +676,7 @@ footer div ul a span {
   }
 }
 
-/* ------ JOBS PAGE Style ------ */
+/* ------ JOBS PAGE with search job page Style ------ */
 .jobs {
   padding: 40px 100px;
   min-height: 800px;
@@ -887,7 +898,7 @@ footer div ul a span {
   color: #111;
 }
 .account .component_header p:last-child span {
-  color: #dfdf07;
+  color: blue;
 }
 
 .account .container {
@@ -919,11 +930,11 @@ footer div ul a span {
   background: transparent;
 }
 .account .container .sidebar .sidebar_links button:hover {
-  color: #dfdf07;
+  color: blue;
   transition: 0.3s;
 }
 .account .container .sidebar .sidebar_links .active {
-  color: #dfdf07;
+  color: blue;
 }
 .account .container .banner {
   width: 100%;

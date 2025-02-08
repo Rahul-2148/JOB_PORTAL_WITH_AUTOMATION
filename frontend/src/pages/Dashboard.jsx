@@ -54,7 +54,7 @@ const Dashboard = () => {
         <div className="component_header">
           <p>Dashboard</p>
           <p>
-            Welcome! <span>{user && user.name}</span>
+            Welcome! <span style={{  fontWeight: "bolder", fontSize: "23px" }}>{user && user.name}</span>
           </p>
         </div>
         <div className="container">
