@@ -9,6 +9,7 @@ const updateProfileSlice = createSlice({
     isUpdated: false,
   },
   reducers: {
+    // Update Profile Slice
     updateProfileRequest(state, action) {
       state.loading = true;
     },
@@ -22,6 +23,8 @@ const updateProfileSlice = createSlice({
       state.loading = false;
       state.isUpdated = false;
     },
+
+    // Update Password Slice
     updatePasswordRequest(state, action) {
       state.loading = true;
     },
@@ -35,6 +38,8 @@ const updateProfileSlice = createSlice({
       state.loading = false;
       state.isUpdated = false;
     },
+
+    // Reset State After Update
     profileResetAfterUpdate(state, action) {
       state.error = null;
       state.isUpdated = false;
@@ -43,6 +48,7 @@ const updateProfileSlice = createSlice({
   },
 });
 
+// update profile data fetch api call 
 export const updateProfile = (data) => async (dispatch) => {
   dispatch(updateProfileSlice.actions.updateProfileRequest());
   try {
@@ -63,6 +69,8 @@ export const updateProfile = (data) => async (dispatch) => {
     );
   }
 };
+
+// update password data fetch api call
 export const updatePassword = (data) => async (dispatch) => {
   dispatch(updateProfileSlice.actions.updatePasswordRequest());
   try {
@@ -84,6 +92,7 @@ export const updatePassword = (data) => async (dispatch) => {
   }
 };
 
+// clear all update profile errors
 export const clearAllUpdateProfileErrors = () => (dispatch) => {
   dispatch(updateProfileSlice.actions.profileResetAfterUpdate());
 };

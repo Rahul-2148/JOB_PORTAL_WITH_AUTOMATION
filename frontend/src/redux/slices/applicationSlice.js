@@ -10,6 +10,7 @@ const applicationSlice = createSlice({
     message: null,
   },
   reducers: {
+    // all application reducers
     requestForAllApplications(state, action) {
       state.loading = true;
       state.error = null;
@@ -23,6 +24,8 @@ const applicationSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
+
+    // my application reducers
     requestForMyApplications(state, action) {
       state.loading = true;
       state.error = null;
@@ -36,6 +39,8 @@ const applicationSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
+
+    // post application reducers
     requestForPostApplication(state, action) {
       state.loading = true;
       state.error = null;
@@ -51,6 +56,8 @@ const applicationSlice = createSlice({
       state.error = action.payload;
       state.message = null;
     },
+
+    // delete application reducers
     requestForDeleteApplication(state, action) {
       state.loading = true;
       state.error = null;
@@ -67,10 +74,13 @@ const applicationSlice = createSlice({
       state.message = null;
     },
 
+    // clear all errors 
     clearAllErrors(state, action) {
       state.error = null;
       state.applications = state.applications;
     },
+
+    // reset application slice 
     resetApplicationSlice(state, action) {
       state.error = null;
       state.applications = state.applications;
@@ -80,6 +90,7 @@ const applicationSlice = createSlice({
   },
 });
 
+// fetch all applications for employer data api response
 export const fetchEmployerApplications = () => async (dispatch) => {
   dispatch(applicationSlice.actions.requestForAllApplications());
   try {
@@ -104,6 +115,7 @@ export const fetchEmployerApplications = () => async (dispatch) => {
   }
 };
 
+// fetch all applications for jobseeker data api response
 export const fetchJobSeekerApplications = () => async (dispatch) => {
   dispatch(applicationSlice.actions.requestForMyApplications());
   try {
@@ -128,6 +140,7 @@ export const fetchJobSeekerApplications = () => async (dispatch) => {
   }
 };
 
+// post application data api response
 export const postApplication = (data, jobId) => async (dispatch) => {
   dispatch(applicationSlice.actions.requestForPostApplication());
   try {
@@ -152,6 +165,7 @@ export const postApplication = (data, jobId) => async (dispatch) => {
   }
 };
 
+// delete application data api response
 export const deleteApplication = (id) => async (dispatch) => {
   dispatch(applicationSlice.actions.requestForDeleteApplication());
   try {
@@ -174,10 +188,12 @@ export const deleteApplication = (id) => async (dispatch) => {
   }
 };
 
+// clear all errors
 export const clearAllApplicationErrors = () => (dispatch) => {
   dispatch(applicationSlice.actions.clearAllErrors());
 };
 
+// reset application slice
 export const resetApplicationSlice = () => (dispatch) => {
   dispatch(applicationSlice.actions.resetApplicationSlice());
 };

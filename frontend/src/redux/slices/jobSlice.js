@@ -12,6 +12,7 @@ const jobSlice = createSlice({
     myJobs: [],
   },
   reducers: {
+    // all jobs reducers
     requestForAllJobs(state, action) {
       state.loading = true;
       state.error = null;
@@ -26,7 +27,7 @@ const jobSlice = createSlice({
       state.error = action.payload;
     },
 
-    // -----------
+    // single job reducers
 
     requestForSingleJob(state) {   // ✅ Add this
       state.loading = true;
@@ -41,6 +42,8 @@ const jobSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
+
+    // post job reducers
     requestForPostJob(state) {  // ✅ Add this
       state.loading = true;
       state.error = null;
@@ -54,6 +57,8 @@ const jobSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
+
+    // my jobs reducers
     requestForMyJobs(state) {  // ✅ Add this
       state.loading = true;
       state.error = null;
@@ -67,6 +72,8 @@ const jobSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
+
+    // delete job reducers
     requestForDeleteJob(state) {  // ✅ Add this
       state.loading = true;
       state.error = null;
@@ -81,11 +88,13 @@ const jobSlice = createSlice({
       state.error = action.payload;
     },
 
-    // -----------
+    // clear all errors reducer
     clearAllErrors(state, action) {
       state.error = null;
       state.jobs = state.jobs;
     },
+    
+    // reset job slice reducer
     resetJobSlice(state, action) {
       state.error = null;
       state.jobs = state.jobs;
@@ -97,6 +106,7 @@ const jobSlice = createSlice({
   },
 });
 
+// fetch all jobs api response
 export const fetchJobs =
   (city, domain, searchKeyword = "") =>
   async (dispatch) => {
@@ -148,6 +158,7 @@ export const fetchJobs =
     }
   };
 
+  // fetch single job data api response
 export const fetchSingleJob = (jobId) => async (dispatch) => {
   dispatch(jobSlice.actions.requestForSingleJob());
   try {
@@ -163,6 +174,7 @@ export const fetchSingleJob = (jobId) => async (dispatch) => {
   }
 };
 
+// post job data api response
 export const postJob = (data) => async (dispatch) => {
   dispatch(jobSlice.actions.requestForPostJob());
   try {
@@ -179,6 +191,7 @@ export const postJob = (data) => async (dispatch) => {
   }
 };
 
+// get my jobs data api response
 export const getMyJobs = () => async (dispatch) => {
   dispatch(jobSlice.actions.requestForMyJobs());
   try {
@@ -194,6 +207,7 @@ export const getMyJobs = () => async (dispatch) => {
   }
 };
 
+// delete job data api response
 export const deleteJob = (id) => async (dispatch) => {
   dispatch(jobSlice.actions.requestForDeleteJob());
   try {
@@ -209,10 +223,12 @@ export const deleteJob = (id) => async (dispatch) => {
   }
 };
 
+// clear all errors action 
 export const clearAllJobErrors = () => (dispatch) => {
   dispatch(jobSlice.actions.clearAllErrors());
 };
 
+// reset job slice action
 export const resetJobSlice = () => (dispatch) => {
   dispatch(jobSlice.actions.resetJobSlice());
 };
