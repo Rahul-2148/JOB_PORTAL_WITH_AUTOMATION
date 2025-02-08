@@ -1,0 +1,39 @@
+backend packages : npm i bcryptjs cloudinary cookie-parser cors dotenv express express-fileupload jsonwebtoken mongoose node-cron nodemailer validator nodemon
+
+frontend packages : npm i react-redux @reduxjs/toolkit axios react-router-dom react-spinners react-toastify react-icons
+
+
+
+niches === domains
+
+#notification sound effect :
+https://www.myinstants.com/media/sounds/error.mp3
+
+https://www.fesliyanstudios.com/play-mp3/4386
+
+
+
+🔴 mongoDB database and indexes autoSync techniques so no conflict happens :
+Schema Migrations Ko Properly Automate Karein: Agar aap production mein kaam kar rahe ho, toh schema aur index migrations ko ek process ka hissa banana zaroori hai. For example:
+
+Mongoose Hooks: Mongoose mein indexes ko sync karne ke liye hooks aur autoIndex: true setting ka use karein.
+Migration Scripts: Migration scripts likhein jo schema changes ke saath database ko sync karein.
+
+🔴Note : New features add kr skte h hmlog jaise ki user Routes me Forgot password and reset password features and also message functionality Chat Application bhi add kr skte h Job Seeker & Employer ke bich chatting.
+
+
+// Function to speak text
+  const speakMessage = (message) => {
+    const speech = new SpeechSynthesisUtterance(message);
+    speech.lang = "en-IN"; // Set language
+    speech.rate = 1; // Adjust speed
+    speech.pitch = 1; // Adjust pitch
+
+    // Get all available voices
+    const voices = window.speechSynthesis.getVoices();
+    
+    // Set female voice (change index if needed)
+    speech.voice = voices.find(voice => voice.name.includes("Female")) || voices[0];
+
+    window.speechSynthesis.speak(speech);
+  };
