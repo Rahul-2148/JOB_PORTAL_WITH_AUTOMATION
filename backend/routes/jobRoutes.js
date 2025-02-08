@@ -19,6 +19,6 @@ router.delete(
   isAuthorized("Employer"),
   deleteJob
 );
-router.get("/get/:id", isAuthenticated, getASingleJob);
+router.get("/get/:id", getASingleJob);
 
 export default router;
