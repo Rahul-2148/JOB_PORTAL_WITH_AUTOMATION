@@ -12,6 +12,7 @@ const Navbar = () => {
       <nav className={show ? "navbar show_navbar" : "navbar"}>
         <div className="logo">
           <img src={rrpnglogo} alt="logo" style={{ width: "150px" }} />
+          <h4 style={{ color: "black" }}>JobWala</h4>
         </div>
         <div className="links">
           <ul>
