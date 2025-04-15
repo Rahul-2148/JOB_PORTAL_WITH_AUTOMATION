@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -37,7 +37,7 @@ const Dashboard = () => {
     if (!isAuthenticated) {
       navigateTo("/");
     }
-  }, [dispatch, error, loading, isAuthenticated]);
+  }, [dispatch, error, loading, isAuthenticated, navigateTo]);
 
   // Function to speak text
   const speakMessage = (message) => {
@@ -160,25 +160,18 @@ const Dashboard = () => {
               switch (componentName) {
                 case "My Profile":
                   return <MyProfile />;
-                  break;
                 case "Update Profile":
                   return <UpdateProfile />;
-                  break;
                 case "Update Password":
                   return <UpdatePassword />;
-                  break;
                 case "Job Post":
                   return <JobPost />;
-                  break;
                 case "My Jobs":
                   return <MyJobs />;
-                  break;
                 case "Applications":
                   return <Applications />;
-                  break;
                 case "My Applications":
                   return <MyApplications />;
-                  break;
 
                 default:
                   <MyProfile />;

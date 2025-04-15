@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FaRegEyeSlash, FaEye } from "react-icons/fa";
 import { toast } from "react-toastify";
@@ -13,6 +13,8 @@ const UpdatePassword = () => {
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const { loading, error, isUpdated } = useSelector(
     (state) => state.updateProfile
@@ -76,38 +78,38 @@ const UpdatePassword = () => {
       <div>
         <label>New Password</label>
         <input
-          type={showPassword ? "text" : "password"}
+          type={showNewPassword ? "text" : "password"}
           value={newPassword}
           onChange={(e) => setNewPassword(e.target.value)}
         />
-        {showPassword ? (
+        {showNewPassword ? (
           <FaRegEyeSlash
             className="eye_icon"
-            onClick={() => setShowPassword(!showPassword)}
+            onClick={() => setShowNewPassword(!showNewPassword)}
           />
         ) : (
           <FaEye
             className="eye_icon"
-            onClick={() => setShowPassword(!showPassword)}
+            onClick={() => setShowNewPassword(!showNewPassword)}
           />
         )}
       </div>
       <div>
         <label>Confirm Password</label>
         <input
-          type={showPassword ? "text" : "password"}
+          type={showConfirmPassword ? "text" : "password"}
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
-        {showPassword ? (
+        {showConfirmPassword ? (
           <FaRegEyeSlash
             className="eye_icon"
-            onClick={() => setShowPassword(!showPassword)}
+            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
           />
         ) : (
           <FaEye
             className="eye_icon"
-            onClick={() => setShowPassword(!showPassword)}
+            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
           />
         )}
       </div>

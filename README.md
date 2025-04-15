@@ -85,7 +85,7 @@ npm start
 ---
 ## Contributors
 👨‍💻 **Rahul Raj Modi**  
-📧 Email: rahulrajmodi24523@gmail.com  
+📧 Email: rahulrajmodi21480@gmail.com  
 🔗 LinkedIn: https://www.linkedin.com/in/rahul-raj-11a946224/
 
 ---
